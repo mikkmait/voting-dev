@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+    <title>Voting system admin page</title>
+</head>
+<body>
+  <div class="main">
+    <div class="heading">Voting system admin page.</div>
+    <div class="votingControl">
+      <div class="headingSmall">Winner control</div>
+      <form action="/admin/changeWinner" method="GET">
+        <button style="background-color: rgba(255, 0, 127, 100%);">CLEAR SCREEN</button>
+        <button name="winner" value="1">1 song</button>
+        <button name="winner" value="2">2 songs</button>
+        <button name="winner" value="3">3 songs</button>
+        <button name="winner" value="Alain">Alain</button>
+        <button name="winner" value="Ben">Ben</button>
+        <button name="winner" value="Colby">Colby</button>
+        <button name="winner" value="Georgia">Georgia</button>
+        <button name="winner" value="Gerardo">Gerardo</button>
+        <button name="winner" value="Gus">Gus</button>
+        <button name="winner" value="Maria">Maria</button>
+        <button name="winner" value="Sayaka">Sayaka</button>
+        <button name="winner" value="Will">Will</button>
+        <button name="winner" value="Yukiko">Yukiko</button>
+        <button name="winner" value="Yuta">Yuta</button>
+      </form>
+    </div>
+    <div class="votingControl half">
+      <div class="headingSmall">Voting control</div>
+        <form action="/admin/initializeAllVotes" method="GET">
+          <button style="background-color: rgba(255, 0, 127, 100%);" onclick="return confirm('Are you sure? You want to reset ALL the votes?!')">RESET ALL VOTES</button>
+        </form>
+      <div>
+        <form action="/admin/activateVotes" method="GET">
+          <div class="pair">
+            <button name="push" value='{"pageName": "vote1", "disabled": false}'>1. vote active</button>
+            <button name="push" value='{"pageName": "vote1", "disabled": true}'>1. vote passive</button>
+          </div>
+          <div class="pair">
+            <button name="push" value='{"pageName": "vote2", "disabled": false}'>2. vote active</button>
+            <button name="push" value='{"pageName": "vote2", "disabled": true}'>2. vote passive</button>
+          </div>
+          <div class="pair">
+            <button name="push" value='{"pageName": "vote3", "disabled": false}'>3. vote active</button>
+            <button name="push" value='{"pageName": "vote3", "disabled": true}'>3. vote passive</button>
+          </div>
+          <div class="pair">
+            <button name="push" value='{"pageName": "vote4", "disabled": false}'>4. vote active</button>
+            <button name="push" value='{"pageName": "vote4", "disabled": true}'>4. vote passive</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="votingControl half">
+      <div class="headingSmall">Voting results</div>
+      <div class="list" id="vote1results">
+        <h3>Vote 1</h3>
+        <ol>
+          <% results1.map((candidate) => { %>
+          <li><%=candidate.nick%> - <%=candidate.voting.vote1.count%></li>
+          <% }) %>
+        </ol>
+      </div>
+      <div class="list" id="vote2results">
+        <h3>Vote 2</h3>
+        <ol>
+          <% results2.map((candidate) => { %>
+          <li><%=candidate.nick%> - <%=candidate.voting.vote2.count%></li>
+          <% }) %>
+        </ol>
+      </div>
+      <div class="list" id="vote2results">
+        <h3>Vote 3</h3>
+        <ol>
+          <% results3.map((candidate) => { %>
+          <li><%=candidate.nick%> - <%=candidate.voting.vote3.count%></li>
+          <% }) %>
+        </ol>
+      </div>
+      <div class="list" id="vote2results">
+        <h3>Vote 4</h3>
+        <ol>
+          <% results4.map((candidate) => { %>
+          <li><%=candidate.nick%> - <%=candidate.voting.vote4.count%></li>
+          <% }) %>
+        </ol>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

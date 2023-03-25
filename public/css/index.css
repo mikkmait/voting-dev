@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: bisque;
+  margin: 0px;
+  padding: 0px;
+}
+
+div {
+  margin: 0px;
+  padding: 0px;
+}
+
+.main {
+  flex-direction: row;
+}
+
+.corner {
+  position: fixed;
+  color: rgba(255, 0, 127, 100%);
+}
+
+.headUser {
+  top: 16px;
+  left: 16px;
+}
+
+.headResult {
+  top: 16px;
+  left: calc(50vw + 16px);
+}
+
+.headAdmin {
+  top: calc(20vh + 16px);
+  left: calc(50vw + 16px);
+}
+
+iframe {
+  margin: 0px;
+  padding: 8px;
+  border: 1px dashed rgba(255, 0, 127, 100%);
+}
+
+#iVoting {
+  display: block;
+  width: 50vw;
+  height: 100vh;
+}
+
+#iResult {
+  display: block;
+  width: 50vw;
+  height: 20vh;
+}
+
+#iAdmin {
+  display: block;
+  width: 50vw;
+  height: 80vh;
+}

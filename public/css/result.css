@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: black;
+}
+
+.main {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.winner {
+  display: block;
+  color: antiquewhite;
+  font-size: 4rem;
+}

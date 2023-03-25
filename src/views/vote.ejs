@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/voting.css">
+    <script>
+  let disabledValue = `<%=JSON.stringify(activePage[0].disabled)%>`;
+  const widthData = `<%-votesString%>`;
+  const countSelector = `<%=currentVote%>`;
+  const sum = 'sumVote';
+    </script>
+    <title>Document</title>
+</head>
+<body>
+<div class="main">
+<form id="voteForm" action="/voting/voteConfirm" method="GET">
+  <% for (let i = 0; i < votesArray.length - 1; i++) { %>
+
+<div class="link dancer">
+  <input type="radio" class="radioButton findMe" name="vote" value='{"voteDef": "<%=currentVote%>", "chosen": "<%=votesArray[i].nick%>"}' id="<%=votesArray[i].nick%>">
+  <label class="radioButton" for="<%=votesArray[i].nick%>">
+    <% if (currentVote === 'vote2') { %>
+      <span class="name" id="element"><%=votesArray[i].name%></span>
+    <% } else { %>
+      <span class="name" id="element"><%=votesArray[i].nick%></span>
+    <% }; %>
+  <div class="accumulator" id="<%=votesArray[i].nick%>prog" style="width: 100%">
+  <div class="accumulation" id="<%=votesArray[i].nick%>acc"></div></div>
+  </label>
+</div>
+
+  <% }; %>
+
+<div class="link dancer submit"><input type="submit" class="submit radioButton" value="SUBMIT VOTE" id="submitVote"></div>
+<div class="link dancer submit"><a href="/voting">BACK</a></div>
+
+</form>
+</div>
+<script src="/js/voting.js"></script>
+</body>
+</html>

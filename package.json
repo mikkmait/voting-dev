@@ -1,0 +1,33 @@
+{
+  "name": "voting-dev",
+  "version": "1.0.0",
+  "description": "voting system development preview",
+  "main": "app.js",
+  "scripts": {
+    "test": "DEBUG=app,app:* nodemon app.js",
+    "start": "node app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "ejs"
+  ],
+  "author": "Mikk-Mait Kivi",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "cors": "^2.8.5",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0",
+    "nodemon": "^2.0.22"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "delay": 1000
+  },
+  "type": "module"
+}
