@@ -24,7 +24,8 @@ https://voting-dev.herokuapp.com
 
 ### Plans for updates:
 
-- introducing some kind of websocket or socket.io or that kind of possibility so the results would update and be displayed in real time
+- introducing some kind of websocket or socket.io or that kind of possibility so the results would update and be displayed in real time.
+- adding security to the admin part just in case. Although it is a small chance someone will access it during the performance, it would still be nice to be safe in that regard.
 
 ### Notes on possible questions:
 
