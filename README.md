@@ -1,6 +1,6 @@
 # voting-dev
 
-A development verion of a web application utilizing node.js, express, mongoDB and other smaller modules to run a live voting functionality.
+A development version of a web application utilizing node.js, express, mongoDB and other smaller modules to run a live voting functionality.
 
 This app is created as a part of a theatre performance, to have an option for the audience to vote for possibilities happening on stage.
   
